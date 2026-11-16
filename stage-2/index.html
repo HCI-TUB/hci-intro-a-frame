@@ -327,6 +327,12 @@
         plantHint.components['hint-card'].hide();
         setTimeout(() => plantHint.components['hint-card'].show(), 10000);
       });
+      // I7: only one hint at a time
+      document.addEventListener('hint-show', (e) => {
+        document.querySelectorAll('[hint-card]').forEach((card) => {
+          if (card !== e.target) card.components['hint-card'].hide();
+        });
+      });
     </script>
   </body>
 </html>
