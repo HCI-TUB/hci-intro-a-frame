@@ -24,16 +24,7 @@
            on desktop. In VR the headset's real head pose takes over, so this height is ignored.
            WASD moves the rig, dragging the mouse turns the camera. -->
       <a-entity id="rig" position="0 0 0" wasd-controls thumbstick-move="hand: #left-hand">
-        <a-entity id="head" camera position="0 1.6 0" look-controls>
-          <!-- HEAD-LOCKED: a child of the camera. Its position is relative to your head, so it
-               follows every head movement. z = -0.8 means 0.8 m in front of the face. -->
-          <a-entity
-            id="message-card"
-            hint-card="title: Message; text: Alex: running 10 min late; tag: head-locked; accent: #ffb347; width: 0.5; height: 0.18"
-            position="0 -0.25 -1.0"
-            position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
-          ></a-entity>
-        </a-entity>
+        <a-entity id="head" camera position="0 1.6 0" look-controls></a-entity>
         <!-- Quest controllers (shown in VR). Left stick = walk. -->
         <a-entity id="left-hand" meta-touch-controls="hand: left"></a-entity>
         <a-entity id="right-hand" meta-touch-controls="hand: right"></a-entity>
@@ -221,6 +212,14 @@
           position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
         ></a-entity>
       </a-entity>
+
+      <!-- BODY-LOCKED: a direct child of the scene; lazy-follow writes its world position. -->
+      <a-entity
+        id="message-card"
+        hint-card="title: Message; text: Alex: running 10 min late; tag: body-locked; accent: #ffb347; width: 0.5; height: 0.18"
+        lazy-follow="distance: 0.8; height: -0.2; deadZone: 25; speed: 3"
+        position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
+      ></a-entity>
     </a-scene>
   </body>
 </html>
