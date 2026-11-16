@@ -280,5 +280,16 @@
         </a-entity>
       </a-entity>
     </a-scene>
+    <script>
+      // Plain-JS additions for the change cards. Runs after the scene is parsed.
+      const plant = document.querySelector('#plant');
+      const plantHint = document.querySelector('#plant-hint');
+      // I3: show on hover. (toggle-hint stays for click; hover shows the card.)
+      // With ?input=gaze every glance opens a card: the Midas touch problem.
+      plant.addEventListener('mouseenter', (e) => {
+        if (e.target === plant || !e.target.closest('[hint-card]'))
+          plantHint.components['hint-card'].show();
+      });
+    </script>
   </body>
 </html>
