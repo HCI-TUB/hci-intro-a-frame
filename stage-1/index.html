@@ -100,6 +100,14 @@
           rotation="0 0 40"
           color="#c9ced6"
         ></a-cylinder>
+        <!-- OBJECT-ANCHORED to the kettle: LOCAL position, 0.6 m above its origin. -->
+        <a-entity
+          id="timer-card"
+          scale="1.5 1.5 1.5"
+          hint-card="title: Timer; text: Tea ready in 2 min; tag: object-anchored; accent: #4da3ff; width: 0.5; height: 0.18"
+          position="0 0.6 0.3"
+          position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
+        ></a-entity>
       </a-entity>
 
       <a-entity
@@ -202,16 +210,6 @@
           position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
         ></a-entity>
       </a-entity>
-
-      <!-- WORLD-LOCKED: a direct child of the scene, pinned on the wall like a sticky note.
-           Its position is a WORLD position and never changes. -->
-      <a-entity
-        id="timer-card"
-        scale="1.5 1.5 1.5"
-        hint-card="title: Timer; text: Tea ready in 2 min; tag: world-locked; accent: #4da3ff; width: 0.5; height: 0.18"
-        position="-0.6 1.5 -1.59"
-        position-label="offsetY: -0.12; offsetZ: 0; width: 0.4"
-      ></a-entity>
     </a-scene>
   </body>
 </html>
