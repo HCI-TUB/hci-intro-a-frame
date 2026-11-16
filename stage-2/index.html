@@ -311,6 +311,12 @@
         if (e.target === plant || !e.target.closest('[hint-card]'))
           plantHint.components['hint-card'].show();
       });
+      // I5: auto-dismiss 5 s after the plant hint opens
+      let autoClose;
+      plantHint.addEventListener('hint-show', () => {
+        clearTimeout(autoClose);
+        autoClose = setTimeout(() => plantHint.components['hint-card'].hide(), 5000);
+      });
     </script>
   </body>
 </html>
