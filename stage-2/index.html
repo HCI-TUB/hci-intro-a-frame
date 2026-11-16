@@ -139,7 +139,28 @@
       </a-entity>
 
       <!-- MUG: deliberately NOT interactive. Making it interactive is a change card. -->
-      <a-entity id="mug" position="-0.2 0.9 -1.2">
+      <a-entity id="mug" position="-0.2 0.9 -1.2" hover-highlight toggle-hint="target: #mug-hint">
+        <a-box
+          class="interactive"
+          width="0.14"
+          height="0.12"
+          depth="0.1"
+          position="0 0.06 0"
+          material="opacity: 0; transparent: true; depthWrite: false"
+        ></a-box>
+        <a-entity
+          id="mug-hint"
+          visible="false"
+          face-camera
+          position="0 0.4 0"
+          hint-card="title: Mug; text: Still warm. Enjoy your tea!; accent: #d9694f; width: 0.5; height: 0.26"
+        >
+          <a-entity
+            id="mug-close"
+            hint-button="label: X; event: hint-close; width: 0.07; height: 0.07"
+            position="0.2 0.08 0.01"
+          ></a-entity>
+        </a-entity>
         <a-cylinder radius="0.04" height="0.09" position="0 0.045 0" color="#d9694f"></a-cylinder>
         <a-torus
           radius="0.025"
